@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_practice_thetechbrothers/bloc/counter/counter_bloc.dart';
-import 'package:flutter_bloc_practice_thetechbrothers/view/counter_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/bloc/counter_bloc.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/home/page/home_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/bloc/switch_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +13,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => SwitchBloc()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-        home: const CounterScreen(),
+        home: const HomeScreen(),
       ),
     );
   }

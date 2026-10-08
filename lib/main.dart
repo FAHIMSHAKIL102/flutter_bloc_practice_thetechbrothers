@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/bloc/counter_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/home/page/home_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/imagepicker/bloc/image_picker_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/bloc/switch_bloc.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/utils/image_picker_utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => CounterBloc()),
         BlocProvider(create: (context) => SwitchBloc()),
+        BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

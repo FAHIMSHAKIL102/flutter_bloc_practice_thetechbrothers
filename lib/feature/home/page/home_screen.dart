@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/page/counter_screen.dart';
-import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/switch_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/imagepicker/pages/image_picker_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/pages/switch_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
                 title: Text('C O U N T E R'),
-                trailing: Icon(Icons.calculate),
+                trailing: Icon(Icons.calculate_outlined),
               ),
             ),
             Card(
@@ -34,7 +35,21 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
                 title: Text('S W I T C H'),
-                trailing: Icon(Icons.switch_camera_rounded),
+                trailing: Icon(Icons.switch_left_outlined),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImagePickerScreen(),
+                    ),
+                  );
+                },
+                title: Text('I M A G E   P I C K E R'),
+                trailing: Icon(Icons.image_outlined),
               ),
             ),
           ],

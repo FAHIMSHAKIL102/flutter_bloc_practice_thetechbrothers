@@ -5,6 +5,7 @@ import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/domain/r
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/presentation/bloc/favourite_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/home/page/home_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/imagepicker/bloc/image_picker_bloc.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/post/presentation/bloc/post_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/bloc/switch_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/todo/presentation/bloc/to_do_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/core/utils/image_picker_utils.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils())),
         BlocProvider(create: (context) => ToDoBloc()),
         BlocProvider(create: (context) => FavouriteBloc(FavouriteRepository())),
+        BlocProvider(create: (context) => PostBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

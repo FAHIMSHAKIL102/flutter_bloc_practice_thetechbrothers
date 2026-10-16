@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/bloc/counter_bloc.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/presentation/bloc/counter_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/domain/repository/favourite_repository.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/presentation/bloc/favourite_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/home/page/home_screen.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => CounterBloc()),
+        //BlocProvider(create: (context) => CounterBloc()),
         BlocProvider(create: (context) => SwitchBloc()),
         BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils())),
         BlocProvider(create: (context) => ToDoBloc()),

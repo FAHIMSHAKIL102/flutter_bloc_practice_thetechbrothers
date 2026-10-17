@@ -28,7 +28,7 @@ class _CounterScreenState extends State<CounterScreen> {
     return BlocProvider(
       create: (context) => _counterBloc,
       child: Scaffold(
-        appBar: AppBar(title: Text('Counter'), centerTitle: true),
+        appBar: AppBar(title: Text('C O U N T E R'), centerTitle: true),
         body: Column(
           mainAxisAlignment: .center,
           crossAxisAlignment: .center,

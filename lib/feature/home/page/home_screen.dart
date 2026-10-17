@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/counter/presentation/page/counter_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/presentation/pages/favourite_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/imagepicker/pages/image_picker_screen.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/feature/login/presentation/pages/login_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/post/presentation/pages/post_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/pages/switch_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/todo/presentation/pages/to_do_screen.dart';
@@ -89,6 +90,18 @@ class HomeScreen extends StatelessWidget {
                 },
                 title: Text('P O S T'),
                 trailing: Icon(Icons.post_add_outlined),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
+                title: Text('L O G I N'),
+                trailing: Icon(Icons.login_outlined),
               ),
             ),
           ],

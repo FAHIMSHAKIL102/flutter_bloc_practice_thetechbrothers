@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/core/router/routes.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/core/router/routes_name.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/domain/repository/favourite_repository.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/favourite/presentation/bloc/favourite_bloc.dart';
-import 'package:flutter_bloc_practice_thetechbrothers/feature/home/page/home_screen.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/imagepicker/bloc/image_picker_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/post/presentation/bloc/post_bloc.dart';
 import 'package:flutter_bloc_practice_thetechbrothers/feature/switch/bloc/switch_bloc.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-        home: const HomeScreen(),
+       initialRoute: RoutesName.homeScreen,
+       onGenerateRoute: Routes.generateRoute,
       ),
     );
   }

@@ -13,12 +13,14 @@ final class LoginInitialState extends LoginState {
   final String email;
   final String password;
   final String message;
+  final PostApiStatus postApiStatus;
   final LoginStatus loginStatus;
 
   const LoginInitialState({
     this.email = '',
     this.password = '',
     this.message = '',
+    this.postApiStatus = PostApiStatus.initial,
     this.loginStatus = LoginStatus.initial,
   });
 
@@ -26,16 +28,24 @@ final class LoginInitialState extends LoginState {
     String? email,
     String? password,
     String? message,
+    PostApiStatus? postApiStatus,
     LoginStatus? loginStatus,
   }) {
     return LoginInitialState(
       email: email ?? this.email,
       password: password ?? this.password,
       message: message ?? this.message,
+      postApiStatus: postApiStatus ?? this.postApiStatus,
       loginStatus: loginStatus ?? this.loginStatus,
     );
   }
 
   @override
-  List<Object> get props => [email, password, message, loginStatus];
+  List<Object> get props => [
+    email,
+    password,
+    message,
+    postApiStatus,
+    loginStatus,
+  ];
 }

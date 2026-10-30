@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc_practice_thetechbrothers/core/utils/enum.dart';
 import 'package:http/http.dart' as http;
 
 part 'login_event.dart';
